@@ -5,13 +5,13 @@
 #-------------------------------------------------------
 
 # This is the name given to your device or mobile app in the Amazon developer portal. To look this up, navigate to https://developer.amazon.com/edw/home.html. It may be labeled Device Type ID.
-ProductID=YOUR_PRODUCT_ID_HERE
+ProductID=$AMAZON_PRODUCT_ID
 
 # Retrieve your client ID from the web settings tab within the developer console: https://developer.amazon.com/edw/home.html
-ClientID=YOUR_CLIENT_ID_HERE
+ClientID=$AMAZON_CLIENT_ID
 
 # Retrieve your client secret from the web settings tab within the developer console: https://developer.amazon.com/edw/home.html
-ClientSecret=YOUR_CLIENT_SECRET_HERE
+ClientSecret=$AMAZON_CLIENT_SECRET
 
 #-------------------------------------------------------
 # No need to change anything below this...
@@ -30,9 +30,9 @@ City='SEATTLE'
 # Your organization name/company name. Cannot be blank.
 Organization='AVS_USER'
 # Your device serial number. Cannot be blank, but can be any combination of characters.
-DeviceSerialNumber='123456789'
+DeviceSerialNumber=$AMAZON_PRODUCT_ID
 # Your KeyStorePassword. We recommend leaving this blank for testing.
-KeyStorePassword=''
+KeyStorePassword=$ALEXA_KeyStorePassword
 
 #-------------------------------------------------------
 # Function to parse user's input.
