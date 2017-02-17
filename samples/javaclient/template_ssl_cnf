@@ -7,6 +7,7 @@ subjectAltName          = @alt_names
 
 [alt_names]
 DNS.1                   = localhost
+DNS.2			= ${Domain}
 IP.1                    = 127.0.0.1
 IP.2                    = 10.0.2.2
 

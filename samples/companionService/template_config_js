@@ -16,7 +16,7 @@
 var config = {
     clientId: "${ClientID}",
     clientSecret: "${ClientSecret}",
-    redirectUrl: 'https://localhost:3000/authresponse',
+    redirectUrl: 'https://${Domain}:3000/authresponse',
     lwaRedirectHost: "amazon.com",
     lwaApiHost: "api.amazon.com",
     validateCertChain: true,

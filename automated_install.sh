@@ -34,6 +34,9 @@ DeviceSerialNumber=$AMAZON_PRODUCT_ID
 # Your KeyStorePassword. We recommend leaving this blank for testing.
 KeyStorePassword=$ALEXA_KeyStorePassword
 
+# url
+Domain=${ALEXA_DOMAIN:-"localhost"}
+
 #-------------------------------------------------------
 # Function to parse user's input.
 #-------------------------------------------------------
@@ -431,6 +434,17 @@ echo " Making sure we are installing to the right OS"
 echo "==============================================="
 echo ""
 echo ""
+
+echo "=========== Check Domain ==========="
+#Check domain
+if [ -n "$ALEXA_DOMAIN" ]; then
+	ping  -c 1 -s 1 $Domain 2>/dev/null 1>/dev/null
+	if [ $? -ne 0 ]; then
+		echo please configure $Domain to answer ping
+		exit
+	fi
+fi
+
 echo "=========== Installing Oracle Java8 ==========="
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 chmod +x $Java_Client_Loc/install-java8.sh

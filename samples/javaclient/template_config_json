@@ -11,7 +11,7 @@
         "lwaUrl":"https://api.amazon.com"
     },
     "companionService":{
-        "serviceUrl":"https://localhost:3000",
+        "serviceUrl":"https://${Domain}:3000",
         "sslClientKeyStore":"${Java_Client_Loc}/certs/client/client.pkcs12",
         "sslClientKeyStorePassphrase":"${KeyStorePassword}",
         "sslCaCert":"${Java_Client_Loc}/certs/ca/ca.crt"
