@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -n "$(which java)" ] && [ -n "$(which javac)" ] && [ -n "$(grep webupd8team /etc/apt/sources.list)" ] &&  [ "$(javac -version 2>&1 | sed 's/.* \(...\).*/\1/')" == "1.8" ]; then
+	echo Already installed
+	exit 0
+fi
+
 # Ensure we are running on Raspbian
 lsb_release -a 2>/dev/null | grep Raspbian
 if [ "$?" -ne "0" ]; then
