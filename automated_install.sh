@@ -34,6 +34,24 @@ DeviceSerialNumber=$AMAZON_PRODUCT_ID
 # Your KeyStorePassword. We recommend leaving this blank for testing.
 KeyStorePassword=$ALEXA_KeyStorePassword
 
+if [ -n "$ALEXA_SSL" ]; then
+	set -- "$ALEXA_SSL"
+	IFS=";"; declare -a Array=($*)
+	if [ ${#Array[@]} -eq 4 ]; then
+		if [ ${#Array[0]} -eq 2 ]; then
+			Country="${Array[0]}"
+		fi
+		if [ ${#Array[1]} -ge 2 ]; then
+			State="${Array[1]}"
+		fi
+		if [ -n "${#Array[2]}" ]; then
+			City="${Array[2]}"
+		fi
+		if [ -n "${#Array[3]}" ]; then
+			Organization="${Array[3]}"
+		fi
+	fi
+fi
 # url
 Domain=${ALEXA_DOMAIN:-"localhost"}
 
